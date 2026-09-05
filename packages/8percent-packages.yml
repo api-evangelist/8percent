@@ -1,0 +1,36 @@
+generated: '2026-09-05'
+method: searched
+source: >-
+  npm registry search (registry.npmjs.org/-/v1/search), PyPI JSON API (pypi.org/pypi/<name>/json),
+  and the full public repository listing of the company's GitHub organization
+  (https://github.com/8percent, 29 public repositories).
+result: none
+package_count: 0
+official_sdk_count: 0
+packages: []
+notes: >-
+  8percent publishes no client library for any API of its own, because it publishes no API. The
+  registry searches "8percent" and "eightpercent" return zero packages on npm (total: 0) and HTTP
+  404 on PyPI. The company does run a real public GitHub organization with 29 repositories, but
+  every one of them is internal engineering tooling, a boilerplate, a fork, or a book-study repo —
+  cliauth (CLI auth manager), python-library and django-app (package boilerplates),
+  aws-firehose-handler, har2document and har2document-django, plus forks of django-braces,
+  django-webpack-loader and Dify. None is a client for an 8percent service, and none of the
+  first-party ones resolves to a published package on PyPI (har2document, har2document-django and
+  aws-firehose-handler all return 404). A "cliauth" package does exist on PyPI (version 0.2.0,
+  published 2019-12-20) but declares no homepage or repository link, so ownership by 8percent
+  could not be established and it is deliberately not claimed here.
+checked_registries:
+- registry: npm
+  query: 8percent, eightpercent
+  results: 0
+- registry: pypi
+  query: 8percent, eightpercent, har2document, har2document-django, aws-firehose-handler
+  results: 0
+- registry: pypi
+  query: cliauth
+  results: 1
+  version: 0.2.0
+  published: '2019-12-20'
+  official: false
+  note: ownership by 8percent not established — no homepage or repository metadata on the release

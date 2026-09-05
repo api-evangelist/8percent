@@ -1,0 +1,178 @@
+generated: '2026-09-05'
+method: probed
+source: >-
+  Anonymous HTTPS probes of the RFC 8615 well-known path set against every first-party
+  8percent host — the registrable domain and www, the corporate and blog hosts, and the four
+  API/app hosts named in the 8percent.kr production JavaScript bundle
+  (https://8percent.kr/assets/index-DenshHdQ.js).
+result: none
+notes: >-
+  No well-known document is served anywhere on 8percent.kr. Two false-positive shapes had to be
+  discounted and are recorded here so a later run does not re-credit them. (1) The 8percent.kr,
+  www.8percent.kr and about.8percent.kr hosts are client-rendered single-page apps whose catch-all
+  answers HTTP 200 with the same 11,631-byte HTML shell for ANY unmatched path — the identical
+  body returned by the site root — so the 200s below on /.well-known/openid-configuration,
+  /oauth-authorization-server, /oauth-protected-resource and /api-catalog are soft-404s, not
+  documents. (2) api.8percent.kr and core-api.8percent.kr answer every /.well-known/* request with
+  an nginx HTTP 403 page, which is an edge deny rule rather than a served document. No WellKnown
+  or SecurityTxt pointer is wired in apis.yml, because nothing was actually served.
+hosts:
+- host: 8percent.kr
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    note: SPA shell (11631 bytes, identical to site root) — soft-404, not a document
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    note: SPA shell (11631 bytes) — soft-404, not a document
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    file: null
+    note: SPA shell (11631 bytes) — soft-404, not a document
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    note: SPA shell (11631 bytes) — soft-404, not a document
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /.well-known/aauth-resource.json
+    status: 404
+    file: null
+- host: www.8percent.kr
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    note: SPA shell (11631 bytes) — soft-404, not a document
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    note: SPA shell (11631 bytes) — soft-404, not a document
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    note: SPA shell (11631 bytes) — soft-404, not a document
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: core-api.8percent.kr
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+    file: null
+    note: nginx deny page for the whole /.well-known/ prefix
+  - path: /.well-known/openid-configuration
+    status: 403
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 403
+    file: null
+  - path: /.well-known/api-catalog
+    status: 403
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 403
+    file: null
+  - path: /.well-known/agent.json
+    status: 403
+    file: null
+- host: api.8percent.kr
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 403
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+    file: null
+  - path: /.well-known/api-catalog
+    status: 403
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 403
+    file: null
+  - path: /.well-known/agent.json
+    status: 403
+    file: null
+- host: events.8percent.kr
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: about.8percent.kr
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    note: SPA shell (11631 bytes) — soft-404, not a document
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    note: SPA shell (11631 bytes) — soft-404, not a document
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: blog.8percent.kr
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null

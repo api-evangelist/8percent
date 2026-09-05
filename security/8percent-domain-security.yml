@@ -1,0 +1,54 @@
+generated: '2026-09-05'
+method: probed
+source: live DNS/TLS/HTTP probes of the 8percent.kr registrable domain and every first-party
+  host named in the 8percent.kr production JavaScript bundle (/assets/index-DenshHdQ.js)
+notes: >-
+  Every first-party host terminates TLS 1.3 with a valid certificate, but not one of them
+  returns a Strict-Transport-Security header — including core-api.8percent.kr, the JSON API
+  host the consumer app calls. The 8percent.kr zone is not DNSSEC-signed and publishes no CAA
+  record, so certificate issuance is unconstrained. SPF and DMARC are both published, with
+  DMARC at p=quarantine.
+hosts:
+- host: 8percent.kr
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Jan 26 23:59:59 2027 GMT
+  hsts: false
+- host: core-api.8percent.kr
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Feb  7 23:59:59 2027 GMT
+  hsts: false
+  note: JSON API host for the consumer app; GET /health returns 200 application/json
+- host: api.8percent.kr
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Feb  7 23:59:59 2027 GMT
+  hsts: false
+- host: loan.8percent.kr
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Mar  7 23:59:59 2027 GMT
+  hsts: false
+- host: events.8percent.kr
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Dec  5 23:59:59 2026 GMT
+  hsts: false
+- host: about.8percent.kr
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov  4 23:59:59 2026 GMT
+  hsts: false
+- host: blog.8percent.kr
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 16 23:59:59 2026 GMT
+  hsts: false
+domains:
+- domain: 8percent.kr
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine

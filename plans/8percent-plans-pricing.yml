@@ -1,0 +1,14 @@
+generated: '2026-09-05'
+method: searched
+source: >-
+  https://8percent.kr/ and https://about.8percent.kr/service/ — the company's own consumer and
+  corporate sites, reviewed for any developer, API, partner or integration pricing page.
+plan_count: 0
+plans: []
+notes: >-
+  8percent publishes no API plans, tiers or developer pricing of any kind, because it publishes no
+  API. Its public pricing surface is consumer product pricing — loan interest rates, investor
+  return rates and the 8percent Black membership — not metered access to a programmable interface,
+  so nothing here maps to an API plan. There is no "contact sales for API access" gate either: the
+  company markets no API at all. An honest zero, recorded so the absence is countable rather than
+  looking un-checked.

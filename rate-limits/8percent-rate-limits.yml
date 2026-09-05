@@ -1,0 +1,16 @@
+generated: '2026-09-05'
+method: searched
+source: >-
+  https://8percent.kr/ and https://about.8percent.kr/ (no developer documentation exists on either),
+  plus a live anonymous request to the app's own API host,
+  https://core-api.8percent.kr/health (HTTP 200, application/json).
+limit_count: 0
+rate_limits: []
+response_headers: []
+notes: >-
+  No rate limits are documented, because 8percent publishes no API documentation. The one first-party
+  JSON endpoint reachable anonymously — GET https://core-api.8percent.kr/health — returns HTTP 200
+  with body {"success": true, "message": null} and carries no X-RateLimit-*, RateLimit-* or Retry-After
+  header, so no runtime rate-limit signal could be observed either. No RateLimits pointer is wired in
+  apis.yml: this artifact records a measured absence, and pointing at it would credit 8percent with a
+  rate-limit surface it does not publish.
