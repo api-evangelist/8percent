@@ -29,7 +29,7 @@ created: '2026-09-05'
 modified: '2026-09-05'
 tags:
 - Company
-- Financial-Services
+- Financial Services
 - Fintech
 - Lending
 - P2P Lending
@@ -53,6 +53,7 @@ tags_raw:
 - Real Estate Lending
 - Tokenization
 - South Korea
+- Financial-Services
 apis: []
 maintainers:
 - FN: Kin Lane
