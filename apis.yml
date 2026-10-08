@@ -61,6 +61,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: RateLimits
+  url: rate-limits/8percent-rate-limits.yml
 - type: Website
   url: https://8percent.kr/
 - type: About
